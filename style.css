@@ -1,0 +1,83 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.menu {
+  position: fixed; /* 固定在視窗 */
+  top: 10px; /* 距離視窗頂部 10px */
+  left: 10px; /* 距離視窗左側 10px */
+  background-color: #333; /* 背景顏色為深灰色 */
+  padding: 10px; /* 內邊距 */
+  border-radius: 5px; /* 圓角 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影 */
+}
+
+.menu ul {
+  list-style: none; /* 移除預設的項目符號 */
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li {
+  margin: 5px 0; /* 每個選單項目之間的間距 */
+  position: relative; /* 確保父選單項目是定位基準 */
+}
+
+.menu ul li a {
+  text-decoration: none; /* 移除超連結的底線 */
+  color: #fff; /* 文字顏色為白色 */
+  font-size: 16px; /* 字體大小 */
+  font-family: Arial, sans-serif; /* 字體樣式 */
+  display: block; /* 將連結設為區塊元素 */
+  padding: 5px 10px; /* 內邊距 */
+  border-radius: 3px; /* 圓角 */
+  transition: background-color 0.3s ease; /* 添加背景顏色過渡效果 */
+}
+
+.menu ul li a:hover {
+  background-color: #555; /* 滑鼠懸停時的背景顏色 */
+}
+
+/* 子選單樣式 */
+.menu ul ul {
+  display: none; /* 預設隱藏子選單 */
+  position: absolute; /* 絕對定位 */
+  top: 0; /* 子選單與父選單項目對齊 */
+  left: 100%; /* 子選單顯示在父選單的右側 */
+  background-color: #444; /* 子選單背景顏色 */
+  padding: 10px;
+  border-radius: 5px; /* 圓角 */
+  z-index: 1000; /* 確保子選單顯示在最上層 */
+  opacity: 0; /* 初始透明度為 0 */
+  visibility: hidden; /* 初始不可見 */
+  transition: opacity 1s ease, visibility 1s ease; /* 設置透明度和可見性過渡為 1 秒 */
+  pointer-events: auto; /* 確保子選單可以接收滑鼠事件 */
+}
+
+.menu ul li:hover > ul,
+.menu ul ul:hover {
+  display: block; /* 滑鼠懸停時顯示子選單 */
+  opacity: 1; /* 透明度變為 1 */
+  visibility: visible; /* 設為可見 */
+}
+
+.menu ul ul li {
+  margin: 5px 0; /* 子選單項目間距 */
+}
+
+.menu ul ul li a {
+  color: #fff; /* 子選單文字顏色 */
+  font-size: 14px; /* 子選單文字大小 */
+  text-decoration: none; /* 移除底線 */
+}
+
+.menu ul ul li a:hover {
+  background-color: #555; /* 滑鼠懸停時的背景顏色 */
+}
+
+/* Removed HTML code mistakenly placed in the CSS file */
